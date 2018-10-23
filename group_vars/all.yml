@@ -1,0 +1,8 @@
+---
+# Variables listed here are applicable to all
+
+jenkins_hostname: "{{ ansible_host }}"
+jenkins_version: "2.148"
+jenkins_plugins: ["git", "ssh", "gerrit-trigger", "extended-read-permission", "ssh-slaves", "ldap", "Ant", "build-timeout", "email-ext", "github", "pipeline-github"]
+
+java_packages: java-1.8.0-openjdk

@@ -1,0 +1,36 @@
+# First field of CHANGEME is for IP/HOSTNAME
+# Some host we use root, while some use normal user.
+# If normal user, we need sudo/su, so add ansible_become and ansible_become_method
+# If root, we will not need ansible_become and ansible_become_method
+#
+# Example:
+#
+# CHANGEME	ansible_connection=ssh	ansible_user=CHANGEME	ansible_become=true	ansible_become_method=sudo
+# CHANGEME	ansible_connection=ssh	ansible_user=root ansible_ssh_pass=root
+
+# required host vars:
+#   - ceph_network_ip: network ip address for ceph internal traffic
+#   - vm_network_ip: ip address for vm storage access
+
+controllerceph ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=192.168.206.11 ansible_port=22 ceph_network_ip=192.168.206.11 vm_network_ip=192.168.206.11  ansible_ssh_pass=17095219595
+computerceph01 ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=192.168.206.12 ansible_port=22 ceph_network_ip=192.168.206.12 vm_network_ip=192.168.206.12  ansible_ssh_pass=17095219595
+computerceph02 ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=192.168.206.13 ansible_port=22 ceph_network_ip=192.168.206.13 vm_network_ip=192.168.206.13  ansible_ssh_pass=17095219595
+#tt-slave1 ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=10.21.1.98 ansible_port=22 ceph_network_ip=10.21.1.98 vm_network_ip=10.21.1.98
+#tt-slave2 ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=10.21.1.99 ansible_port=22 ceph_network_ip=10.21.1.99 vm_network_ip=10.21.1.99
+
+[OSD]
+#tt-master
+#tt-slave1
+#tt-slave2
+controllerceph
+computerceph01
+computerceph02
+[MON]
+#tt-slave1
+#tt-master
+controllerceph
+computerceph01
+computerceph02
+[ADMIN]
+#tt-master
+controllerceph

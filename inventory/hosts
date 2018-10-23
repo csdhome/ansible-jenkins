@@ -1,0 +1,12 @@
+# First field of CHANGEME is for IP/HOSTNAME
+# Some host we use root, while some use normal user.
+# If normal user, we need sudo/su, so add ansible_become and ansible_become_method
+# If root, we will not need ansible_become and ansible_become_method
+#
+# Example:
+#
+# jenkins ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=HOST_IP ansible_port=22 ansible_ssh_pass=HOST_PASS
+
+[JENKINS]
+jenkins
+

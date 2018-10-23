@@ -1,0 +1,17 @@
+---
+- name: restart jenkins
+  service: name=jenkins state=restarted
+
+- name: configure default users
+  template:
+    src: "{{ item }}"
+    dest: "{{ jenkins_home }}/init.groovy.d/{{ item }}"
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
+    mode: 0775
+  with_items:
+    - basic-security.groovy
+    - csrf.groovy
+    - Disable-CLI-Over-remoting.groovy
+    - slave-to-master-security.groovy
+  register: jenkins_users_config
