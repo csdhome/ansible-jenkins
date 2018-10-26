@@ -3,6 +3,6 @@
 
 jenkins_hostname: "{{ ansible_host }}"
 jenkins_version: "2.148"
-jenkins_plugins: ["git", "ssh", "gerrit-trigger", "extended-read-permission", "ssh-slaves", "ldap", "Ant", "build-timeout", "email-ext", "github", "pipeline-github"]
+jenkins_plugins: ["ant", "antisamy-markup-formatter", "authentication-tokens", "branch-api", "build-timeout", "docker-commons", "email-ext", "git", "github", "github-branch-source", "gradle", "ldap", "lockable-resources", "matrix-auth", "pam-auth", "pipeline-github-lib", "pipeline-graph-analysis", "ssh-slaves", "subversion", "timestamper", "workflow-aggregator", "ws-cleanup"]
 
 java_packages: java-1.8.0-openjdk
