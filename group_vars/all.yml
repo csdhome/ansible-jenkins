@@ -4,8 +4,7 @@
 jenkins_hostname: "{{ ansible_host }}"
 # jenkins_version: "2.148"
 jenkins_package_state: latest
-jenkins_http_port: 80
-#jenkins_http_port_param: 80
+# jenkins_http_port: 80
 
 jenkins_plugins: ["ant", "antisamy-markup-formatter", "authentication-tokens", "branch-api", "build-timeout", "docker-commons", "email-ext", "git", "github", "github-branch-source", "gradle", "ldap", "lockable-resources", "matrix-auth", "pam-auth", "pipeline-github-lib", "pipeline-graph-analysis", "ssh-slaves", "subversion", "timestamper", "workflow-aggregator", "ws-cleanup"]
 
