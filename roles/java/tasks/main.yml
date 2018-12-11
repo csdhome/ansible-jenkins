@@ -32,6 +32,9 @@
 - include_tasks: setup-FreeBSD.yml
   when: ansible_os_family == 'FreeBSD'
 
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Ubuntu'
+
 # Environment setup.
 - name: Set JAVA_HOME if configured.
   template:
