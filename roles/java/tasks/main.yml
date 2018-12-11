@@ -32,7 +32,7 @@
 - include_tasks: setup-FreeBSD.yml
   when: ansible_os_family == 'FreeBSD'
 
-- include_tasks: setup-Debian.yml
+- include_tasks: setup-Ubuntu.yml
   when: ansible_os_family == 'Ubuntu'
 
 # Environment setup.
