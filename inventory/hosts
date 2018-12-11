@@ -8,5 +8,5 @@
 # jenkins ansible_connection=ssh ansible_user=root ansible_ssh_pass=root ansible_host=HOST_IP ansible_port=22 ansible_ssh_pass=HOST_PASS
 
 [JENKINS]
-jenkins
+127.0.0.1 ansible_connection=local
 
